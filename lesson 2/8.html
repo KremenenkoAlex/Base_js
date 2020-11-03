@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            'use strict';
+            var x = +prompt("введите число ");
+            var n = +prompt("введите степень ");
+
+            function pow(x, n) {
+                if (n == 1) {
+                    return x;
+                } else {
+                    return x * pow(x, n - 1);
+                    }
+                }
+
+                alert(pow(x, n)); 
+    </script>
+</body>
+</html>

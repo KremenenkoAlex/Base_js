@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            'use strict';
+                var a = +prompt("введите первое число ");
+                var b = +prompt("введите второе число ");
+                var operation = prompt("введите операцию ");
+
+                function sum(a, b) {
+                    return a + b;
+                }
+
+                function dif(a, b) {
+                    return a - b;
+                }
+
+                function mul(a, b) {
+                    return a * b;
+                }
+
+                function div(a, b) {
+                    return a / b;
+                }
+
+                function mathOperation(a, b, operation) {
+                    switch (operation) {
+                        case "+":
+                            return sum;  // здесь не понятно. Можно ли использовать фунцию sum, получается функция в фунции или надо было использовать a + b
+                            break;
+                        case "-":
+                            return a - b;
+                            break;
+                        case "*":
+                            return mul;
+                            break;
+                        case "/":
+                            return a / b;
+                            break;
+                    }
+                }
+    </script>
+</body>
+</html>
