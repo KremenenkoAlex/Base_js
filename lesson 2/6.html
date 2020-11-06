@@ -31,16 +31,16 @@
                 function mathOperation(a, b, operation) {
                     switch (operation) {
                         case "+":
-                            return sum;  // здесь не понятно. Можно ли использовать фунцию sum, получается функция в фунции или надо было использовать a + b
+                            return sum(a,b);
                             break;
                         case "-":
-                            return a - b;
+                            return dif(a,b);
                             break;
                         case "*":
-                            return mul;
+                            return mul(a,b);
                             break;
                         case "/":
-                            return a / b;
+                            return div(a,b);
                             break;
                     }
                 }

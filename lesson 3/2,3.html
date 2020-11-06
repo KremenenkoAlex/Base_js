@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var goods = [
+            {
+                title: "Товар 1",
+                price: 100
+            },
+            {
+                title: "Товар 2",
+                price: 200
+            },
+            {
+                title: "Товар 3",
+                price: 300
+            }
+        ];
+    
+    var goodsPrice = 0;
+    goods.push (
+        {
+            title : "Товар 4",
+            price: 500
+        });
+    
+        function countBasketPrice(basket) {
+            for (i = 0; i < goods.length; i++) {
+                goodsPrice += goods[i].price;
+            }
+            return goodsPrice;
+        }
+    
+    document.write("<h2> В Вашей корзине: </h2>" );
+    
+    for (i = 0; i < goods.length; i++) {
+        document.write(goods[i].title + " - " + goods[i].price + " руб. </br>");
+    
+    }
+    
+    document.write("</br><h2> Стоимость ваших товаров: " + countBasketPrice(goods) + "</h2></br>")
+    
+    </script>
+</body>
+</html>
