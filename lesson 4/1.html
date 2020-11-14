@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                var number = +prompt("Введите число от 0 до 999");
+                var dig = {
+                    hundreds: 0,
+                    tens: 0,
+                    units: 0,
+                };
+                
+                if (number <= 9) {
+                    dig.units = number;
+                } else if (number > 9 && number <= 999) {
+                    dig.hundreds = Math.floor(number / 100 % 10);
+                    dig.tens = Math.floor(number / 10 % 10);
+                    dig.units = Math.floor(number % 10);
+                } else {
+                    number = 0;
+                    console.log("Вы ввели число вне диапазона от 0 - 999");
+                }
+                console.log(dig); 
+            
+    </script>
+</body>
+</html>
