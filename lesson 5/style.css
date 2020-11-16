@@ -1,0 +1,41 @@
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+.black {
+    background-color: rgb(173, 169, 169);
+    }
+
+.white {
+    background-color:white
+}    
+
+tr:last-child td:first-child {
+    border: none;
+    background-color:white;
+}
+
+tr:last-child td:last-child {
+    border: none;
+  
+}
+
+tr:first-child td:first-child {
+    border: none;
+    
+}
+
+tr:first-child td:last-child {
+    border: none;
+
+}
+
