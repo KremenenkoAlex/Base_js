@@ -1,19 +1,41 @@
-var answers, great = 0, mistake = 0, money = 0;
-for (var i = 0; i < questions.length; i++) {
-    answers = +prompt("вопрос " + (i + 1) +"\n"+ questions[i].question +"\n"+ "варианьы ответов " +"\n"+ questions[i].a1 + "\n" + questions[i].a2 + "\n" + questions[i].a3 + "\n" + questions[i].a4 + "\n" + "введите номер ответа./n Для выхода из игры нажмите -1");
-    if (answers == -1) {
-        alert("Досвидания")
-        break;
-    } if (answers == questions[i].correct) {
-        money += (i + 1) * 100;
-        alert("ответили правильно" + ((i + 1) * 100) + " $");
-        great++;
-    } else {
-        mistake++;
-        alert("не верно" + "\n" + "У вас осталось " + (3 - mistake) + "попытки");
-        if (mistake == 3) {
-        break;
+function chessboard() {
+    let newTable = document.createElement( 'table' ),
+        lets = [ '','A','B','C','D','E','F','G','H','' ],
+        blackFigs1 = [ '8','♜','♞','♝','♛','♚','♝','♞','♜','8' ],
+        whiteFigs1 = [ '1','♖','♘','♗','♕','♔','♝','♗','♖','1' ],
+        blackFigs2 = [ '7','♟','♟','♟','♟','♟','♟','♟','♟','7' ],
+        whiteFigs2 = [ '2','♙','♙','♙','♙','♙','♙','♙','♙','2' ];
+    for ( let i = 0, a = 9; i < 10, a >= 0; i++, a-- ) {
+        let newTr = newTable.insertRow(i);
+        for ( let j = 0; j < 10; j++ ) {
+            let newTd = newTr.insertCell( j );
+                        switch (i) {
+                case 0:
+                    newTd.innerText = lets[ j ];
+                    break;
+                case 1:
+                    newTd.innerHTML = blackFigs1[ j ];
+                    break;
+                case 2:
+                    newTd.innerHTML = blackFigs2[ j ];
+                    break;
+                case 7:
+                    newTd.innerHTML = whiteFigs2[ j ];
+                    break;
+                case 8:
+                    newTd.innerHTML = whiteFigs1[ j ];
+                    break;
+                case 9:
+                    newTd.innerText = lets[ j ];
+                    break;
+                default:
+                    if ( j === 0 || j === 9 ) {
+                        newTd.innerHTML = a;
+                    }
+                    break;
+            }
         }
     }
-}
-alert("вы правильно ответили на " + great + " и заработали " + money);
+    document.body.appendChild( newTable );
+};
+chessboard();
